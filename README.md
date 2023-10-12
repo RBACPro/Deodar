@@ -33,58 +33,22 @@ A policy is the minimal permission module and ideal for modelling enterprise RBA
 
 ### Install
 
-Deodar is available in Maven Central Repository.  
-Add the following to your build dependencies:
+Deodar is available in Maven Central Repository.
 
 **Maven (pom.xml)**:
 
 ```xml
-<dependency>
-  <groupId>dev.cel</groupId>
-  <artifactId>cel</artifactId>
-  <version>0.2.0</version>
-</dependency>
 ```
 
 **Gradle**
 
 ```gradle
-implementation 'dev.cel:cel:0.2.0'
 ```
 
 Then run this example:
 
 ```java
-import dev.cel.common.CelAbstractSyntaxTree;
-import dev.cel.common.CelValidationException;
-import dev.cel.common.types.SimpleType;
-import dev.cel.compiler.CelCompiler;
-import dev.cel.compiler.CelCompilerFactory;
-import dev.cel.runtime.CelEvaluationException;
-import dev.cel.runtime.CelRuntime;
-import dev.cel.runtime.CelRuntimeFactory;
-import java.util.Map;
-
-public class HelloWorld {
-  // Construct the compilation and runtime environments.
-  // These instances are immutable and thus trivially thread-safe and amenable to caching.
-  private static final CelCompiler CEL_COMPILER =
-      CelCompilerFactory.standardCelCompilerBuilder().addVar("my_var", SimpleType.STRING).build();
-  private static final CelRuntime CEL_RUNTIME =
-      CelRuntimeFactory.standardCelRuntimeBuilder().build();
-
-  public void run() throws CelValidationException, CelEvaluationException {
-    // Compile the expression into an Abstract Syntax Tree.
-    CelAbstractSyntaxTree ast = CEL_COMPILER.compile("my_var + '!'").getAst();
-
-    // Plan an executable program instance.
-    CelRuntime.Program program = CEL_RUNTIME.createProgram(ast);
-
-    // Evaluate the program with an input variable.
-    String result = (String) program.eval(Map.of("my_var", "Hello World"));
-    System.out.println(result); // 'Hello World!'
-  }
-}
+Pending
 ```
 
 ## Design Goal
