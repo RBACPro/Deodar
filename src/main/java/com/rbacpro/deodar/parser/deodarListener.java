@@ -35,6 +35,16 @@ public interface deodarListener extends ParseTreeListener {
 	 */
 	void exitStmts(deodarParser.StmtsContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link deodarParser#more_stmts}.
+	 * @param ctx the parse tree
+	 */
+	void enterMore_stmts(deodarParser.More_stmtsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link deodarParser#more_stmts}.
+	 * @param ctx the parse tree
+	 */
+	void exitMore_stmts(deodarParser.More_stmtsContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link deodarParser#stmt}.
 	 * @param ctx the parse tree
 	 */

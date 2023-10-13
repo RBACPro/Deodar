@@ -30,6 +30,12 @@ public interface deodarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitStmts(deodarParser.StmtsContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link deodarParser#more_stmts}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMore_stmts(deodarParser.More_stmtsContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link deodarParser#stmt}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

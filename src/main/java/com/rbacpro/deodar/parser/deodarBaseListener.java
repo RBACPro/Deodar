@@ -48,6 +48,18 @@ public class deodarBaseListener implements deodarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterMore_stmts(deodarParser.More_stmtsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMore_stmts(deodarParser.More_stmtsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterStmt(deodarParser.StmtContext ctx) { }
 	/**
 	 * {@inheritDoc}

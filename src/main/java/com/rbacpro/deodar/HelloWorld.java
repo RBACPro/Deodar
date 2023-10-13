@@ -9,7 +9,8 @@ import org.antlr.v4.runtime.CommonTokenStream;
 public class HelloWorld {
 
     public static void main(String[] args){
-        CharStream in = CharStreams.fromString("{\"principal\":\"aaa\",\"action\":\"bbb\",\"resource\":\"ccc\"}");
+        CharStream in = CharStreams.fromString("{\"Statement\":[{\"principal\":\"aaa\",\"action\":\"bbb\",\"resource\":\"ccc\"}," +
+                "{\"principal\":\"A\",\"action\":\"B\",\"resource\":\"C\"}, {\"principal\":\"A\",\"action\":\"B\",\"resource\":\"C\"}]}");
 
        deodarLexer lexer = new deodarLexer(in);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
