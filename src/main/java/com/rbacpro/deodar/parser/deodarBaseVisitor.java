@@ -3,6 +3,9 @@
     package com.rbacpro.deodar.parser;
     import java.util.HashMap;
     import com.rbacpro.deodar.model.Statement;
+    import com.rbacpro.deodar.model.Principal;
+    import com.rbacpro.deodar.model.Action;
+    import com.rbacpro.deodar.model.Resource;
 
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
@@ -30,4 +33,32 @@ public class deodarBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitStmts(deodarParser.StmtsContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitStmt(deodarParser.StmtContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitPrincipal(deodarParser.PrincipalContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitAction(deodarParser.ActionContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitResource(deodarParser.ResourceContext ctx) { return visitChildren(ctx); }
 }

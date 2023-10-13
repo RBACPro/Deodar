@@ -9,7 +9,7 @@ import org.antlr.v4.runtime.CommonTokenStream;
 public class HelloWorld {
 
     public static void main(String[] args){
-        CharStream in = CharStreams.fromString("aaa bbb ccc dddd abcd");
+        CharStream in = CharStreams.fromString("{\"principal\":\"aaa\",\"action\":\"bbb\",\"resource\":\"ccc\"}");
 
        deodarLexer lexer = new deodarLexer(in);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
