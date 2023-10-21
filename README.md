@@ -1,4 +1,4 @@
-# Deodar： Enterprise Ready-Authorization Language
+# Deodar: A General Permission Specification Schema
 
 Deodar is an Enterprise-ready permission specification language based on JSON/Yaml.
 It allows definition of policies of who can do what under what conditions.
