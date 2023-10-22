@@ -23,12 +23,14 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
     implementation 'com.google.guava:guava:31.1-jre'
     antlr 'org.antlr:antlr4:4.13.1'
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'com.google.auto.value:auto-value-annotations:1.10.4'
 }
 
 generateGrammarSource {
     maxHeapSize = "64m"
     arguments += ["-visitor", "-long-messages"]
-    outputDirectory = file("src/main/java/com/rbacpro/deodar/parser")
+    outputDirectory = file("src/main/java/com/rbacpro/deodar/parser/generated")
 }
 
 

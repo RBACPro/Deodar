@@ -1,81 +1,52 @@
 # Deodar: A General Permission Specification Schema
 
-Deodar is an Enterprise-ready permission specification language based on JSON/Yaml.
-It allows definition of policies of who can do what under what conditions.
+Deodar provides parser and evaluator for a permission-specification schema based on JSON.  
+Permissions define who can do what in what conditions. 
 
 
 ```
-Allow Role ProjectManager to delete any project from specific IPs.
+Allow principal x@acme.com to delete any clusters in environment `e-abc` made from IPs within CIDR 73.231.187.0/24.
 ```
+
 ```json
-[{
-  "Subject": "Role:ProjectManager",
-  "Action": "DeleteProject",
-  "Resource": "Project/*",
-  "Condition": "inIpRange(context.ip, '1.2.3.0/24')"
-}]
+{ 
+  "Version": "v1",
+  "Description": "This is a permission example",
+  "Statement": [
+  {
+    "Subject": "x@acme.com",
+    "Action": "SampleApp:DeleteCluster",
+    "Resource": "env/e-abc/cluster/*",
+    "Condition": "inIpRange(context.sourceIp, '73.231.187.0/24')"
+  }]
+}
 ```
 
-A policy is the minimal permission module and ideal for modelling enterprise RBAC models.
+A sample request made by x@acme.com to delete cluster env/e-abc/cluster/x-123 in app SampleApp:
+```json
+{
+  "principal": {
+    "id": "x@acme.com",
+    "organization": "124"
+  },
+  "action": {
+    "id": "SampleApp:DeleteCluster"
+  },
+  "context": {
+    "sourceIp": "73.231.187.100"
+  },
+  "resource": {
+    "id": "env/e-abc/cluster/x-123"
+  }
+}
+```
+
+The above request is allowed as all principal, action, resource and condition blocks match.
+
 
 ---
-
-* [Design Goal](#design-goal)
-* [Overview](#overview)
-    * [Environment Setup](#environment-setup)
-    * [Checking](#checking)
-    * [Evaluation](#evaluation)
-    * [Errors](#errors)
+* [Quick Start](#quick-start)
 
 ---
 
 ## Quick Start
-
-### Install
-
-Deodar is available in Maven Central Repository.
-
-**Maven (pom.xml)**:
-
-```xml
-```
-
-**Gradle**
-
-```gradle
-```
-
-Then run this example:
-
-```java
-Pending
-```
-
-## Design Goal
-
-One of the most important design goals of this language is to earn developers love.
-
-1. Use developer-friendly techniques
-2. 
-
-## Overview
-
-### Environment Setup
-
-### Checking
-
-### Evaluation
-
-### Errors
-
-## Grammar
-
-
-### Policy grammar notes
-* A single policy can contain an array of statements.
-* Policies have a maximum size between 2048 characters and 10,240 characters, 
-depending on what entity the policy is attached to. For more information, 
-see IAM and AWS STS quotas. Policy size calculations do not include white space characters.
-* The condition_block element is required in resource-based policies (for example, in Amazon S3 bucket policies) and in trust policies for IAM roles. It must not be included in identity-based policies.
-
-
