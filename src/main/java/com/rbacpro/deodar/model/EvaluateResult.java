@@ -2,6 +2,7 @@ package com.rbacpro.deodar.model;
 
 import com.google.errorprone.annotations.Immutable;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,6 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class EvaluateResult {
     private boolean allowed;
 }

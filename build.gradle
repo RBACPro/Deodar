@@ -19,12 +19,15 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
     implementation 'org.springdoc:springdoc-openapi-ui:1.6.6'
     implementation 'org.json:json:20211205'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0-M1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0-M1'
+    testRuntimeOnly "org.junit.platform:junit-platform-commons:1.7.0"
     implementation 'com.google.guava:guava:31.1-jre'
     antlr 'org.antlr:antlr4:4.13.1'
     implementation 'com.google.code.gson:gson:2.10.1'
     implementation 'com.google.auto.value:auto-value-annotations:1.10.4'
+    testImplementation 'com.google.truth:truth:1.1.5'
+
 }
 
 generateGrammarSource {
