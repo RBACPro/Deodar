@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public final class DeodarParseResult {
+public final class DeodarEvaluateResult {
 
-    private deodarParser.PolicyContext p;
+    private boolean allowed;
 }

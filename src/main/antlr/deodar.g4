@@ -53,7 +53,7 @@ resource returns [String name]
 
 
  principal_id returns [String name]
- : WILDCARD {$name='*';}
+ : WILDCARD {$name="*";}
  | ID {$name= $ID.text;}
  ;
 
