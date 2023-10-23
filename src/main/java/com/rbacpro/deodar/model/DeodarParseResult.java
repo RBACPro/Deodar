@@ -14,5 +14,6 @@ import lombok.NoArgsConstructor;
 @Builder
 public final class DeodarParseResult {
 
-    private deodarParser.PolicyContext p;
+    private deodarParser.PolicyContext policy;
+    private boolean hasError;
 }

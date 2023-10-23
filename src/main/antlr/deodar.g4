@@ -66,9 +66,5 @@ WILDCARD
 : '*'
 ;
 
-
 ID    : ('a'..'z' | 'A'..'Z')+;
-
-
-
 SPACE : ' ' {skip();};

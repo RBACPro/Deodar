@@ -1,15 +1,23 @@
 package com.rbacpro.deodar;
 
+import com.google.common.io.Resources;
 import com.rbacpro.deodar.evaluator.DeodarEvaluatorFactory;
+import com.rbacpro.deodar.model.DeodarParseResult;
 import com.rbacpro.deodar.parser.DeodarParserFactory;
-import com.rbacpro.deodar.parser.generated.deodarParser;
+
+import java.io.IOException;
+import java.nio.charset.Charset;
 
 public class TestApp {
 
-    public static void main(String[] args){
-        String policy = "{\"Version\":\"v1\",\"Statement\":[{\"principal\":\"*\",\"action\":\"bbb\",\"resource\":\"ccc\"}," +
-                "{\"principal\":\"A \",\"action\":\"B\",\"resource\":\"C\"}, {\"principal\":\"ABc\",\"action\":\"B\",\"resource\":\"C\"}]}";
-        deodarParser.PolicyContext pc = DeodarParserFactory.standardDeodarParserBuilder().build().parse(policy).getP();
-        DeodarEvaluatorFactory.standardDeodarEvaluatorBuilder().build().evaluate(pc);
+    public static void main(String[] args) throws IOException {
+
+        String policy = Resources.toString(Resources.getResource("test_policy.json"), Charset.defaultCharset());
+
+        DeodarParseResult res = DeodarParserFactory.standardDeodarParserBuilder().build().parse(policy);
+        if (res.isHasError()) {
+            System.out.println("Encounter errors parsing input.");
+        }
+        DeodarEvaluatorFactory.standardDeodarEvaluatorBuilder().build().evaluate(res.getPolicy());
     }
 }
