@@ -11,8 +11,8 @@ gradle-app.setting
 # Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
 !gradle-wrapper.jar
 
-java/com/rbacpro/deodar/parser/**
-src/main/java/com/rbacpro/deodar/parser/
+java/com/rbacpro/deodar/parser/generated/**
+src/main/java/com/rbacpro/deodar/parser/generated
 
 .DS_Store
 
