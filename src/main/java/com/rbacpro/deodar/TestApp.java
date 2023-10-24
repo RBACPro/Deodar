@@ -12,12 +12,21 @@ public class TestApp {
 
     public static void main(String[] args) throws IOException {
 
-        String policy = Resources.toString(Resources.getResource("test_policy.json"), Charset.defaultCharset());
+        /**
+         * Run on good policies
+         */
+
+        String policy = Resources.toString(Resources.getResource("good/test_policy.json"), Charset.defaultCharset());
 
         DeodarParseResult res = DeodarParserFactory.standardDeodarParserBuilder().build().parse(policy);
         if (res.isHasError()) {
             System.out.println("Encounter errors parsing input.");
         }
         DeodarEvaluatorFactory.standardDeodarEvaluatorBuilder().build().evaluate(res.getPolicy());
+
+        /**
+         * Run on bad policies
+         */
+
     }
 }

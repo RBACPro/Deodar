@@ -1,0 +1,9 @@
+{
+  "Statement": [
+    {
+      "principal": "*",
+      "action": "bbb",
+      "resource": "ccc"
+    }
+  ]
+}

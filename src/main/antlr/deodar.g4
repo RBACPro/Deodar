@@ -31,7 +31,7 @@ more_stmts {$statements.addAll($more_stmts.statements);}
     $r = new Resource();
     $a = new Action();
  }
- : '{' principal ',' action ',' resource (condition)?'}'
+ : '{' principal ',' action ',' resource'}'
  {
     System.out.println("In parsing principal and its name is "+ $principal.name  + " and length is " + $principal.name.length());
     $p.setName($principal.name);
@@ -51,9 +51,9 @@ resource returns [String name]
 : '"resource":"'ID'"' {$name = $ID.text;}
 ;
 
-condition returns [String name]
-: ',"condition":"'ID'"' {$name = $ID.text;}
-;
+//condition returns [String name]
+//: ',"condition":"'ID'"' {$name = $ID.text;}
+//;
 
 
  principal_id returns [String name]

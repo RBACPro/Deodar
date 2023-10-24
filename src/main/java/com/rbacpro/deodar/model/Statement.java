@@ -19,5 +19,5 @@ public class Statement {
     private Principal principal;
     private Resource resource;
     private Action action;
-    private Condition condition;
+    //private Condition condition;
 }

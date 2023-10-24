@@ -1,0 +1,19 @@
+{
+  "Statement": [
+    {
+      "principal": "*",
+      "action": "bbb",
+      "resource": "ccc"
+    },
+    {
+      "principal": "A ",
+      "action": "B",
+      "resource": "C"
+    },
+    {
+      "principal": "ABc",
+      "action": "B",
+      "resource": "C"
+    }
+  ]
+}
