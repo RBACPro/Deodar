@@ -3,7 +3,9 @@ package com.rbacpro.deodar.parser;
 import com.google.errorprone.annotations.Immutable;
 import com.rbacpro.deodar.model.DeodarParseResult;
 
-/** Public interface for the parsing Deodar expressions. */
+/**
+ * Public interface for the parsing Deodar expressions.
+ */
 @Immutable
 public interface IDeodarParser {
 
@@ -15,6 +17,7 @@ public interface IDeodarParser {
     default DeodarParseResult parse(String policy) {
         return parse(policy, "<input>");
     }
+
     /**
      * Parse the input {@code policy} and return a {@code DeodarParseResult}.
      *

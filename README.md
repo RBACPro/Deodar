@@ -1,8 +1,7 @@
 # Deodar: A General Permission Specification Schema
 
 Deodar provides parser and evaluator for a permission-specification schema based on JSON.  
-Permissions define who can do what in what conditions. 
-
+Permissions define who can do what in what conditions.
 
 ```
 Allow principal x@acme.com to delete any clusters in environment `e-abc` made from IPs within CIDR 73.231.187.0/24.
@@ -23,6 +22,7 @@ Allow principal x@acme.com to delete any clusters in environment `e-abc` made fr
 ```
 
 A sample request made by x@acme.com to delete cluster env/e-abc/cluster/x-123 in app SampleApp:
+
 ```json
 {
   "principal": {
@@ -45,6 +45,7 @@ The above request is allowed as all principal, action, resource and condition bl
 
 
 ---
+
 * [Quick Start](#quick-start)
 
 ---
