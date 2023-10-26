@@ -2,8 +2,7 @@
   "Version": "v1",
   "Statement": [
     {
-      "action": "bbb",
-      "principal": "*",
+      "principal": "bbb",
       "resource": "ccc"
     }
   ]

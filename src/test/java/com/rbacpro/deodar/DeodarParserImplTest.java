@@ -22,9 +22,9 @@ public class DeodarParserImplTest {
             ClassLoader classloader = Thread.currentThread().getContextClassLoader();
             ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver(classloader);
             Resource[] resources = resolver.getResources("classpath:parser/good/*.json");
-            System.out.println("The size of policy files is " + resources.length);
+            System.out.println("The number of policy files is " + resources.length);
             for (Resource resource : resources) {
-                System.out.println("Loading the content of the reference file:" + resource.getFilename());
+                System.out.println("Loading the content of the test file:" + resource.getFilename());
                 String policy = new String(resource.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
                 DeodarParseResult res = DeodarParserFactory.standardDeodarParserBuilder().build().parse(policy);
                 assertThat(res.getPolicy()).isNotNull();
@@ -33,8 +33,6 @@ public class DeodarParserImplTest {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
 
     @Test
@@ -44,9 +42,9 @@ public class DeodarParserImplTest {
             ClassLoader classloader = Thread.currentThread().getContextClassLoader();
             ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver(classloader);
             Resource[] resources = resolver.getResources("classpath:parser/bad/*.json");
-            System.out.println("The size of policy files is " + resources.length);
+            System.out.println("The number of policy files is " + resources.length);
             for (Resource resource : resources) {
-                System.out.println("Loading the content of the reference file: " + resource.getFilename());
+                System.out.println("Loading the content of the test file: " + resource.getFilename());
                 String policy = new String(resource.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
                 DeodarParseResult res = DeodarParserFactory.standardDeodarParserBuilder().build().parse(policy);
                 assertThat(res.getPolicy()).isNull();
@@ -55,7 +53,5 @@ public class DeodarParserImplTest {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
 }

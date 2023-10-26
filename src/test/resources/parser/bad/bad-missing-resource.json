@@ -3,8 +3,7 @@
   "Statement": [
     {
       "action": "bbb",
-      "principal": "*",
-      "resource": "ccc"
+      "principal": "ccc"
     }
   ]
 }

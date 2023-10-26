@@ -31,9 +31,12 @@ more_stmts {$statements.addAll($more_stmts.statements);}
     $r = new Resource();
     $a = new Action();
  }
- : '{' principal ',' action ',' resource'}'
+ :
+ '{'principal','action','resource'}' | '{'principal','resource','action'}'
+ | '{'action','principal','resource'}' |  '{'action','resource','principal'}'
+ | '{'resource','principal','action'}' | '{'resource','action','principal'}'
  {
-    System.out.println("In parsing principal and its name is "+ $principal.name  + " and length is " + $principal.name.length());
+    System.out.println("In parsing statement");
     $p.setName($principal.name);
     $r.setName($resource.name);
     $a.setName($action.name);

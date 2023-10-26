@@ -1,0 +1,35 @@
+{
+  "Version": "v1",
+  "Statement": [
+    {
+      "principal": "*",
+      "action": "bbb",
+      "resource": "ccc"
+    },
+    {
+      "principal": "*",
+      "resource": "ccc",
+      "action": "bbb"
+    },
+    {
+      "resource": "ccc",
+      "principal": "*",
+      "action": "bbb"
+    },
+    {
+      "resource": "ccc",
+      "action": "bbb",
+      "principal": "*"
+    },
+    {
+      "action": "bbb",
+      "resource": "ccc",
+      "principal": "*"
+    },
+    {
+      "action": "bbb",
+      "principal": "*",
+      "resource": "ccc"
+    }
+  ]
+}
